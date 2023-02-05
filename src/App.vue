@@ -16,6 +16,9 @@ export default {
 </script>
 
 <style>
+  * {
+    font-family: 'Nanum Pen Script', cursive;
+  }
   body {
     margin: 0;
   }

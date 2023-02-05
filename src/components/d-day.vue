@@ -26,7 +26,7 @@ export default {
       startDate: '2022-02-07',
       endDate: '2023-08-06',
       currentDay: dayjs(),
-      fractionalPartLen: 10,
+      fractionalPartLen: 7,
     }
   },
   mounted() {
@@ -87,6 +87,14 @@ export default {
     padding: 0 10px;
   }
 
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 27px;
+  }
+
   input {
     border: none;
     height: 20px;
@@ -94,6 +102,7 @@ export default {
     width: 300px;
     background: rgba(255, 255, 255, 0.5);
     border-radius: 5px;
+    font-size: 25px;
   }
 
   section {
@@ -111,6 +120,6 @@ export default {
   p {
     margin: 0;
     padding: 10px 0;
-    font-size: 18px;
+    font-size: 25px;
   }
 </style>
