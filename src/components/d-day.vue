@@ -70,8 +70,8 @@ export default {
 
 <style scoped>
   .card {
-    width: 400px;
-    height: 600px;
+    width: 300px;
+    height: 500px;
 
     background: rgba(255, 255, 255, 0.5);
     border-radius: 20px;
@@ -99,7 +99,7 @@ export default {
     border: none;
     height: 20px;
     padding: 5px;
-    width: 300px;
+    width: 200px;
     background: rgba(255, 255, 255, 0.5);
     border-radius: 5px;
     font-size: 25px;
