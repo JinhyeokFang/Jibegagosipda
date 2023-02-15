@@ -10,6 +10,7 @@
     <hr color="black">
     <section class="config">
       <h2>설정</h2>
+      <p class="timeInputForm"><span>현재: </span><input v-model="currentDate"/></p>
       <p class="timeInputForm"><span>시작일: </span><input v-model="startDate"/></p>
       <p class="timeInputForm"><span>종료일: </span><input v-model="endDate"/></p>
     </section>
@@ -25,6 +26,7 @@ export default {
     return {
       startDate: '2022-02-07',
       endDate: '2023-08-06',
+      currentDate: '',
       currentDay: dayjs(),
       fractionalPartLen: 7,
     }
@@ -32,7 +34,7 @@ export default {
   mounted() {
     function update() {
       console.log(this.currentDay);
-      this.currentDay = dayjs();
+      this.currentDay = dayjs(this.currentDate === '' ? undefined : this.currentDate);
     }
 
     setInterval(update.bind(this), 1);
@@ -44,15 +46,15 @@ export default {
     },
     dhours() {
       const endDay = dayjs(this.endDate);
-      return endDay.diff(this.currentDay, 'hours') + 1;
+      return endDay.diff(this.currentDay, 'hours');
     },
     dminutes() {
       const endDay = dayjs(this.endDate);
-      return endDay.diff(this.currentDay, 'minutes') + 1;
+      return endDay.diff(this.currentDay, 'minutes');
     },
     dseconds() {
       const endDay = dayjs(this.endDate);
-      return (endDay.diff(this.currentDay, 'microseconds') + 1) / 1000;
+      return endDay.diff(this.currentDay, 'microseconds') / 1000;
     },
     percent() {
       const startDay = dayjs(this.startDate);
@@ -71,7 +73,7 @@ export default {
 <style scoped>
   .card {
     width: 300px;
-    height: 500px;
+    height: 550px;
 
     background: rgba(255, 255, 255, 0.5);
     border-radius: 20px;
@@ -80,7 +82,7 @@ export default {
   }
 
   .time {
-    padding: 10px;
+    padding: 0 10px;
   }
 
   .config {
